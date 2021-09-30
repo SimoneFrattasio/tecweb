@@ -1,0 +1,61 @@
+{%extends "base.html"%}
+{%block content%}
+<h1>Prenotazione lezioni di teoria</h1>
+<p>E' possibile prenotare solo una lezione al giorno</p>
+<h2>Posti disponibili</h2>
+<table class="table">
+  <thead>
+    <tr>
+      <th scope="col">#</th>
+      <th scope="col">Lunedì</th>
+      <th scope="col">Martedì</th>
+      <th scope="col">Mercoledì</th>
+      <th scope="col">Giovedì</th>
+      <th scope="col">Venerdì</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th scope="row">10:00</th>
+      <td>{{lezione.calcolaPosti("Lunedì",10,"aula")}}</td>
+      <td>{{lezione.calcolaPosti("Martedì",10,"aula")}}</td>
+      <td>{{lezione.calcolaPosti("Mercoledì",10,"aula")}}</td>
+      <td>{{lezione.calcolaPosti("Giovedì",10,"aula")}}</td>
+      <td>{{lezione.calcolaPosti("Venerdì",10,"aula")}}</td>
+    </tr>
+    <tr>
+      <th scope="row">19:00</th>
+      <td>{{lezione.calcolaPosti("Lunedì",19,"aula")}}</td>
+      <td>{{lezione.calcolaPosti("Martedì",19,"aula")}}</td>
+      <td>{{lezione.calcolaPosti("Mercoledì",19,"aula")}}</td>
+      <td>{{lezione.calcolaPosti("Giovedì",19,"aula")}}</td>
+      <td>{{lezione.calcolaPosti("Venerdì",19,"aula")}}</td>
+    </tr>
+  
+  </tbody>
+</table>
+<form method="POST">
+  <p>Selezionare giorno</p>
+<div class="input-group mb-3">
+
+    <select class="form-select" id="giorno" name="giorno">
+      <option selected></option>
+      <option value="Lunedì">Lunedì</option>
+      <option value="Martedì">Martedì</option>
+      <option value="Mercoledì">Mercoledì</option>
+      <option value="Giovedì">Giovedì</option>
+      <option value="Venerdì">Venerdì</option>
+    </select>
+</div>
+<p>Selezionare orario</p>
+<div class="input-group mb-3">
+    <select class="form-select" id="orario" name="orario">
+      <option selected></option>
+      <option value="10">10:00</option>
+      <option value="19">19:00</option>
+    </select>
+    
+</div>
+<button type="submit" class="btn btn-primary">Invia</button>
+</form>
+{%endblock%}

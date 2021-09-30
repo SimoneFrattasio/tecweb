@@ -1,0 +1,68 @@
+{%extends "base.html"%}
+{%block content%}
+<h1>Prenotazione lezioni di guida</h1>
+<p>E' possibile prenotare fino a 2 lezioni di guida per giorno</p>
+<h2>Posti disponibili</h2>
+<table class="table">
+  <thead>
+    <tr>
+      <th scope="col">#</th>
+      <th scope="col">Lunedì</th>
+      <th scope="col">Martedì</th>
+      <th scope="col">Mercoledì</th>
+      <th scope="col">Giovedì</th>
+      <th scope="col">Venerdì</th>
+    </tr>
+  </thead>
+  <tbody>
+    
+        {% set giorni=["Lunedì","Martedì","Mercoledì","Giovedì","Venerdì"] %}
+        
+
+        {%for x in range(10,20)%}  
+        {%if x!=13 and x!=14%}
+        <tr>
+        <th scope="row">{{x}}:00</th>
+        {%for giorno in giorni%}
+           
+          
+      <td>{{lezione.calcolaPosti(giorno,x,"guida")}}</td>
+    
+           {%endfor%}
+           {%endif%}
+        </tr>
+           {%endfor%}
+       
+  </tbody>
+</table>
+<form method="POST">
+  <p>Selezionare giorno</p>
+<div class="input-group mb-3">
+
+    <select class="form-select" id="giorno" name="giorno">
+      <option selected></option>
+      <option value="Lunedì">Lunedì</option>
+      <option value="Martedì">Martedì</option>
+      <option value="Mercoledì">Mercoledì</option>
+      <option value="Giovedì">Giovedì</option>
+      <option value="Venerdì">Venerdì</option>
+    </select>
+</div>
+<p>Selezionare orario</p>
+<div class="input-group mb-3">
+    <select class="form-select" id="orario" name="orario">
+      <option selected></option>
+      <option value="10">10:00</option>
+      <option value="11">11:00</option>
+      <option value="12">12:00</option>
+      <option value="15">15:00</option>
+      <option value="16">16:00</option>
+      <option value="17">17:00</option>
+      <option value="18">18:00</option>
+      <option value="19">19:00</option>
+    </select>
+    
+</div>
+<button type="submit" class="btn btn-primary">Invia</button>
+</form>
+{%endblock%}

@@ -1,0 +1,34 @@
+{%extends "base.html"%}
+{%block title%}Iscrizione{%endblock%}
+{%block content%}
+<form method="POST">
+    <h3 align="center">Iscrizione</h3>
+    <div class="form-group">
+        <label for="email">Indirizzo email</label>
+        <input type="email" class="form-control" id="email" name="email" placeholder="name@example.com">
+      </div>
+
+      <div class="form-group">
+        <label for="password">Nome</label>  
+        <input type="text" class="form-control" id="nome" name="nome" placeholder="Inserisci il nome">
+      </div>
+
+      <div class="form-group">
+        <label for="cognome">Cognome</label>  
+        <input type="text" class="form-control" id="cognome" name="cognome" placeholder="Inserisci il cognome">
+      </div>
+      
+      <div class="form-group">
+        <label for="password1">Password</label>
+        <input type="password" class="form-control" id="password1" name="password1" placeholder="Inserisci una password(ameno 6 caratteri)"> 
+      </div>
+
+      <div class="form-group">
+        <label for="password2">Conferma Password</label>  
+        <input type="password" class="form-control" id="password2" name="password2" placeholder="Inserisci una password(ameno 6 caratteri)">
+       
+      </div>
+  <br />
+<button type="submit" class="btn btn-primary">Iscriviti</button>
+</form>
+{%endblock%}

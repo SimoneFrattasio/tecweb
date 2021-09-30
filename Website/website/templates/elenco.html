@@ -1,0 +1,64 @@
+{%extends "base.html"%}
+{%block content%}
+<h1>Elenco prenotazioni</h1>
+{%if user.email=="admin@autoscuola.it"%}
+      <h2>Prenotazioni lezioni in aula</h2>
+<form method="POST">
+<ul class="list-group">
+  {%for utente in utenti%}
+    {%for lezione in lezioni%}
+    {%if lezione.tipologia=="aula" and lezione.id_allievo==utente.id%}
+    <li class="list-group-item">
+      <input class="form-check-input me-1" type="checkbox" value="{{lezione.id}}" aria-label="..." name='elenco_check_box'>
+     {{utente.nome}} {{utente.cognome}} Giorno:{{lezione.giorno}}     Ore:{{lezione.orario}}
+
+    </li>
+    {%endif%}
+    {%endfor%}
+    {%endfor%}
+  </ul>
+ 
+  <h2>Prenotazioni lezioni di guida</h2>
+  {%for utente in utenti%}
+  {%for lezione in lezioni%}
+    {%if lezione.tipologia=="guida" and lezione.id_allievo==utente.id%}
+    <li class="list-group-item">
+      <input class="form-check-input me-1" type="checkbox"  value="{{lezione.id}}" aria-label="..." name='elenco_check_box'>
+      {{utente.nome}} {{utente.cognome}} Giorno:{{lezione.giorno}}     Ore:{{lezione.orario}} 
+    </li>
+    {%endif%}
+    {%endfor%}
+    {%endfor%}
+  </ul>
+  <button type="submit" class="btn btn-primary">Disdici</button>
+</form>
+
+{%else%}
+<h2>Prenotazioni lezioni in aula</h2>
+<form method="POST">
+<ul class="list-group">
+    {%for lezione in lezioni%}
+    {%if lezione.tipologia=="aula"%}
+    <li class="list-group-item">
+      <input class="form-check-input me-1" type="checkbox" value="{{lezione.id}}" aria-label="..." name='elenco_check_box'>
+      Giorno:{{lezione.giorno}}     Ore:{{lezione.orario}}
+
+    </li>
+    {%endif%}
+    {%endfor%}
+  </ul>
+ 
+  <h2>Prenotazioni lezioni di guida</h2>
+  {%for lezione in lezioni%}
+    {%if lezione.tipologia=="guida"%}
+    <li class="list-group-item">
+      <input class="form-check-input me-1" type="checkbox"  value="{{lezione.id}}" aria-label="..." name='elenco_check_box'>
+      Giorno:{{lezione.giorno}}     Ore:{{lezione.orario}} 
+    </li>
+    {%endif%}
+    {%endfor%}
+  </ul>
+  <button type="submit" class="btn btn-primary">Disdici</button>
+</form>
+{%endif%}
+{%endblock%}

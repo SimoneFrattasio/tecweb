@@ -1,0 +1,90 @@
+{%extends "base.html"%}
+{%block content%}
+
+<div class="dropdown"style="padding: 20px; " >
+  <h1>Servizi</h1>
+  <button class="btn btn-primary dropdown-toggle" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
+    Scegli un servizio
+  </button>
+  <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
+    <li><a class="dropdown-item" id="patenti" href="#">Conseguimento patenti</a></li>
+    <li><a class="dropdown-item" id="cqc" href="#">CQC merci/persone</a></li>
+    <li><a class="dropdown-item" id="rinnovo" href="#">Rinnovo e Duplicato</a></li>
+    <li><a class="dropdown-item" id="punti" href="#">Recupero punti</a></li>
+    <li><a class="dropdown-item" id="conversione" href="#">Converione patente estera/militare</a></li>
+    <li><a class="dropdown-item" id="cartaDelConducente" href="#">Carta del conducente</a></li>
+  </ul>
+</div>
+  
+</div> 
+<h1></h1>
+<p></p>
+<script>  
+
+
+
+
+  const paragrafo=document.querySelector('p');
+  const titolo=document.querySelector('h1');
+  var dropdown=document.getElementById('dropdownMenuButton1');
+  var patenti=document.getElementById('patenti');
+  var cqc=document.getElementById('cqc');
+  var punti=document.getElementById('punti');
+  var rinnovo=document.getElementById('rinnovo');
+  var conversione=document.getElementById('conversione');
+  var cartaDelConducente=document.getElementById('cartaDelConducente');
+
+  patenti.onclick= function (){
+    funzione(patenti.id);
+  }
+  cqc.onclick= function (){
+    funzione(cqc.id);
+  }
+  punti.onclick= function (){
+    funzione(punti.id);
+  }
+  conversione.onclick=function(){
+    funzione(conversione.id)
+  }
+  cartaDelConducente.onclick=function(){
+    funzione(cartaDelConducente.id)
+  }
+  rinnovo.onclick=function(){
+    funzione(rinnovo.id)
+  }
+
+ function funzione(parametro){
+    if(parametro=="patenti"){
+      
+      titolo.innerText=("Conseguimento patenti: moto,auto,autocarri,autobus,nautiche");
+      paragrafo.innerHTML=("    <p>Sono previsti corsi teorici in sede per tutte le categorie di patenti e guide su prenotazione</p><h3>Patente AM</h3><ul><li>Età:14 anni</li><li>Prezzo:250€</li><li>Modalità:Prova teorica + Esame di guida</li><li>Documentazione:</li><ul><li>4 Foto</li><li>Carta d'identità</li><li>Codice Fiscale</li></ul></ul><h3>Patente A1</h3><ul><li>Età:16 anni</li><li>Prezzo 250€</li><li>Modalità:Prova teorica(Se non si ha già la patente AM) + Esame di guida</li><li>Documentazione:</li><ul><li>4 Foto</li><li>Carta d'identità</li><li>Codice Fiscale</li></ul></ul><h3>Patente A2</h3><ul><li>Età:18 anni</li><li>Prezzo 300€</li><li>Modalità:Prova teorica + Esame di guida</li><li>Documentazione:</li><ul><li>4 Foto</li><li>Carta d'identità</li><li>Codice Fiscale</li></ul></ul><h3>Patente A</h3><ul><li>Età:20 se si è titolari della patente A2 da 2 anni 21 anni per la guida dei tricicli 24 anni</li><li>Prezzo 350€</li><li>Modalità:Prova teorica + Esame di guida</li><li>Documentazione:</li><ul><li>4 Foto</li><li>Carta d'identità</li><li>Codice Fiscale</li></ul></ul><h3>Patente B</h3><ul><li>Età: 18 anni</li><li>Prezzo 450€</li><li>Modalità:Prova teorica + Esame di guida</li><li>Documentazione:</li><ul><li>4 Foto</li><li>Carta d'identità</li><li>Codice Fiscale</li></ul></ul><h3>Patente C</h3><ul><li>Età : 21 anni con l'obbligo di patente B (18 se si consegue la CQC merci)</li><li>Prezzo 1200€</li><li>Modalità:Prova teorica + Esame di guida</li><li>Documentazione:</li><ul><li>4 Foto</li><li>Carta d'identità</li><li>Codice Fiscale</li><li>Patente B</li></ul></ul><h3>Patente D</h3><ul><li>Età : 24 anni, con obbligo della patente D (21 se si consegue la CQC persone)</li><li>Prezzo 1400€</li><li>Modalità:Prova teorica + Esame di guida</li><li>Documentazione:</li><ul><li>4 Foto</li><li>Carta d'identità</li><li>Codice Fiscale</li><li>Patente B</li></ul></ul><h3>Patente KB</h3><ul><li>Età : 21 anni,con obbligo della patente B</li><li>Prezzo 2000€</li><li>Modalità:Prova teorica + Esame di guida</li><li>Documentazione:</li><ul><li>4 Foto</li><li>Carta d'identità</li><li>Codice Fiscale</li><li>Patente B</li></ul></ul>");
+    }
+      else if(parametro=="cqc"){
+    titolo.textContent=("Conseguimento e rinnovo : CQC merci/persone");
+    paragrafo.innerHTML=("C.Q.C. è l’acronimo di Carta di Qualificazione del Conducente. La CQC si può definire come la “laurea” della patente di guida. E’ una Carta di Qualificazione del Conducente (attenzione: non è una patente!) ed è obbligatoria per la guida professionale; si aggiunge alla patente di guida di categoria C, D, CE, DE. La CQC trasporto persone è obbligatoria dal 10 settembre 2008. La CQC trasporto merci è obbligatoria dal 10 settembre 2009. La CQC segue il regime dei PUNTI analogamente a come succede per la patente.<br>La Carta di Qualificazione del Conducente è una abilitazione necessaria ai conducenti che trasportano merci o persone su strada. La devono avere tutti i conducenti che guidano professionalmente veicoli adibiti al trasporto di merci superiori a 3,5 t e per trasporto di persone oltre i 9 posti. Debbono possedere la C.Q.C. i conducenti che intendano condurre:<br><ul><li>Veicoli aventi massa complessiva a pieno carico superiore a 3500 Kg. trasportanti merci</li><li>Veicoli aventi numero di posti complessivi superiore a 9 (compreso il conducente) trasportanti persone</li></ul><h3>Conseguimento</h3><ul><li>Età : 21 anni</li><li>Prezzo 1600€</li><li>Modalità:Corso di 140 ore con frequenza obbligatoria + Esame finale</li><li>Documentazione:</li><ul><li>2 Foto</li><li>Carta d'identità</li><li>Fotocopia patente</li></ul></ul><h3>Rinnovo</h3><ul><li>Prezzo 160€</li><li>Modalità:Corso di 35 ore</li><li>Documentazione:</li><ul><li>2 Foto</li><li>Carta d'identità</li><li>Fotocopia patente</li></ul></ul>");
+  }
+  else if(parametro=="rinnovo"){
+    titolo.innerText=("Rinnovo e Duplicato Patente");
+    paragrafo.innerHTML=(" <h3>Rinnovo</h3>Per il rinnovo di patente è prevista la visita medica obbligatoria in sede il mercoledì ore 18:00 su prenotazione,la patente rinnovata arriverà tramite posta in autoscuola con spese postali a carico nostro<br><ul><li>Prezzo 80€</li><li>Documentazione:</li><ul><li>1 Foto</li><li>Carta d'identità</li><li>Fotocopia patente</li><li>Codice Fiscale</li></ul></ul><h3>Duplicato</h3><p>In caso di furto,smarrimento o deterioramento è possibile effettuare il duplicato della patente</p><ul><li>Prezzo 50€</li><li>Documentazione:</li><ul><li>2 Foto</li><li>Carta d'identità</li><li>Codice Fiscale</li><li>Patente - In caso di deterioramento</li><li>Denuncia - In caso di furto/smarrimento</li></ul></ul>");
+  }
+  else if(parametro=="punti"){
+    titolo.innerText=("Recupero punti patente/CQC");
+    paragrafo.innerHTML=("Ogni titolare di patente ha in dotazione 20 punti.<br>Se si commettono infrazioni al codice stradale di una certa gravità, oltre ad una sanzione amministrativa e ad un eventuale provvedimento sulla patente o sulla carta di circolazione è prevista la decurtazione di un certo numero di punti.<br>La corrispondenza tra infrazioni e punti decurtati (tolti) è presente nella tabella allegata all'art. 126 bis del codice stradale.<br>Chi esaurisce tutti i punti deve rifare gli esami per la patente (revisione). Chi commette infrazioni, ma nei due anni successivi non ne commette altre comportanti la decurtazione, ha il reintegro completo dei 20 punti. Chi non commette nessuna infrazione, ad ogni biennio avrà due punti in più, fino ad un massimo di 30 punti complessivi. Per conoscere il punteggio associato alla propria patente, è possibile telefonare al numero 848782782 o consultare il sito internet http://www.ilportaledellautomobilista.it/.<br>Chi commette più infrazioni in una volta sola, può perdere al massimo 15 punti, purché un'infrazione non comporti la sospensione o revoca della patente. È la comunicazione del CED (Centro Elaborazione Dati) del Ministero dei Trasporti, che comunica ufficialmente la decurtazione dei punti, e che autorizza alla frequenza di un corso di recupero:<ul><li>il corso rivolto ai titolari di patente di macrocategoria A e B dura 12 ore e permette di riottenere 6 punti;</li><li>il corso rivolto ai titolari di CQC dura 20 ore e permette di riottenere 20 punti.</li><li>Prezzo 100€</li><li>Documentazione:</li><ul><li>1 Foto</li><li>Carta d'identità</li><li>Codice Fiscale</li><li>Patente</li></ul></ul>");
+  }
+  else if(parametro=="conversione"){
+    titolo.innerText=("Conversione Estera/Militare");
+    paragrafo.innerHTML=("<h3>Conversione patente comunitaria</h3>La procedura è destinata ai conducenti in possesso di patente rilasciata da uno stato dell'Unione europea o dello Spazio Economico Europeo che ottengono una residenza anagrafica o una residenza normale in Italia.<br>Le patenti di guida rilasciate da stati appartenenti all’Unione Europea o allo Spazio Economico Europeo sono equiparate alle patenti italiane.<ul><li>Visita medica in sede</li><li>Prezzo 100€</li><li>Documentazione:</li><ul><li>1 Foto</li><li>Carta d'identità</li><li>Codice Fiscale</li><li>Patente</li></ul></ul> <h3>Conversione patente non comunitaria</h3><br>Per i titolari di una patente di guida non comunitaria è possibile guidare veicoli cui la patente abilita fino ad un anno dall’acquisizione della residenza.<br>Dopo un anno è necessario, per poter condurre veicoli sul territorio italiano, convertire la patente.<br>Ciò è possibile se lo Stato che ha rilasciato l’abilitazione alla guida ha sottoscritto accordi di reciprocità con l’Italia.<br><ul><li>Visita medica in sede</li><li>Prezzo 100€</li><li>Documentazione:</li><ul><li>1 Foto</li><li>Carta d'identità</li><li>Codice Fiscale</li><li>Patente</li><li>Permesso di soggiorno</li></ul></ul>");
+  }
+  else if(parametro=="cartaDelConducente"){
+    titolo.innerText=("Carta del conducente");
+    paragrafo.innerHTML=("<br>La carta del coducente è un dispositivo elettronico che registra le attività degli automezzi adibiti a trasporto di persone o merci. La carta tachigrafica è la smart card che interagisce con il tachigrafo digitale per la memorizzazione delle informazioni sui tempi di guida e riposo.<br>L'infrastruttura tecnologica, realizzata per la gestione delle carte tachigrafiche, è costituita da un sistema informativo che consente alle Camere di Commercio di assolvere alla funzione di Autorità per l'emissione delle carte; da un archivio delle carte tachigrafiche emesse in Italia dal sistema delle Camere di commercio e dalla Rete Telematica (TACHOnet) che consente,agli Stati che aderiscono, di scambiarsi telematicamente le informazioni sulle carte tachigrafiche emesse in tutta Europa. <ul><li>Prezzo 250€</li><li>Documentazione:</li><ul><li>1 Foto</li><li>Carta d'identità</li><li>Codice Fiscale</li><li>Patente</li></ul>  </ul>");
+  }
+    
+
+ 
+
+    }
+  
+
+</script>
+{%endblock%}
